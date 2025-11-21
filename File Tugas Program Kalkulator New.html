@@ -1,0 +1,68 @@
+<!-- Aisha Novira - 1710622087 --> 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Keren</title>
+    <!-- Jelaskan Kodingan ini apa : Kode ini mengimpor Tailwind CSS, font Inter, dan file CSS lokal supaya halaman web bisa tampil dengan desain dan font yang diinginkan. --> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-sm bg-gray-800 rounded-2xl shadow-2xl p-6 space-y-4">
+        
+        <!-- Jelaskan Kodingan ini apa : kode ini hanya menampilkan gambar banner bertuliskan “Kalkulator” dengan tampilan rapi, sudut membulat, dan ada efek animasi halus. --> 
+        <div>
+            <img id="statusImage" 
+                 src="https://placehold.co/400x100/A4D8E1/E5E7EB?text=Kalkulator" 
+                 alt="Status Kalkulator"
+                 class="w-full rounded-lg transition-all duration-300 ease-in-out shadow-inner">
+        </div>
+
+        <!-- Jelaskan Kodingan ini apa : Kode tersebut berfungsi untuk membuat tampilan layar kalkulator. Bagian digunakan sebagai kotak berwarna hitam dengan sudut melengkung dan bayangan di dalamnya agar tampil seperti panel kalkulator. Di dalam kotak tersebut terdapat elemen yang berfungsi sebagai layar tempat angka ditampilkan. Input ini tidak bisa diketik secara langsung oleh pengguna karena diberi atribut readonly, sehingga hanya bisa diisi melalui JavaScript. Tampilan teks pada layar dibuat besar, berwarna putih, rata kanan, dan menggunakan font monospace agar terlihat seperti kalkulator sungguhan. Selain itu, placeholder “0” muncul saat belum ada angka yang ditampilkan. Dengan kata lain, kode ini membentuk bagian layar kalkulator yang modern dan mudah dibaca. --> 
+        <div class="bg-gray-900 rounded-lg p-4 shadow-inner">
+            <input type="text" id="display" 
+                   class="w-full bg-transparent text-right text-5xl font-mono text-white border-0 outline-none p-2" 
+                   readonly 
+                   placeholder="0">
+        </div>
+
+        <!-- Jelaskan Kodingan ini apa : Kode tersebut digunakan untuk membuat deretan tombol kalkulator dalam bentuk grid empat kolom. Setiap tombol dibuat menggunakan elemen dan diberikan nilai tertentu melalui atribut data-value, seperti untuk clear,  untuk menghapus satu karakter, “%” untuk persen, dan “/” untuk pembagian. Kelas Tailwind CSS digunakan untuk memberikan tampilan modern pada tombol, seperti ukuran teks besar, warna latar yang berbeda, efek hover, sudut melengkung, padding yang lebar, bayangan, serta teks berwarna putih. Secara keseluruhan, kode ini membentuk bagian tombol fungsi dasar pada kalkulator digital. --> 
+        <div class="grid grid-cols-4 gap-3">
+            <button data-value="C" class="btn-calc text-2xl font-bold bg-red-600 hover:bg-red-500 rounded-lg p-5 shadow-md text-white">C</button>
+            <button data-value="DEL" class="btn-calc text-2xl font-bold bg-gray-600 hover:bg-gray-500 rounded-lg p-5 shadow-md text-white">DEL</button>
+            <button data-value="%" class="btn-calc text-2xl font-bold bg-gray-600 hover:bg-gray-500 rounded-lg p-5 shadow-md text-white">%</button>
+            <button data-value="/" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">/</button>
+
+            <!--  Jelaskan Kodingan ini apa : Kode tersebut membuat baris tombol kalkulator untuk angka dan operasi. Setiap tombol dibuat menggunakan elemen dan diberi atribut data-value yang menyimpan nilai tombol, seperti angka 7, 8, 9, serta simbol * untuk operasi perkalian. Tampilan tombol dibuat modern menggunakan kelas Tailwind CSS, seperti ukuran teks besar, warna latar abu-abu atau biru, efek hover yang berubah warna, sudut membulat, bayangan, dan teks berwarna putih. Secara keseluruhan, kode ini membentuk bagian tombol input angka dan operator pada kalkulator digital.  --> 
+            <button data-value="7" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">7</button>
+            <button data-value="8" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">8</button>
+            <button data-value="9" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">9</button>
+            <button data-value="*" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">*</button>
+
+            <!--  Jelaskan Kodingan ini apa : Kode tersebut digunakan untuk membuat tombol-tombol kalkulator yang menampilkan angka 4, 5, 6, dan tombol operator pengurangan. Setiap tombol memiliki atribut data-value yang menyimpan nilai yang akan dikirim ke fungsi kalkulator saat tombol ditekan. Tampilan tombol dibuat menarik menggunakan kelas Tailwind CSS, seperti warna abu-abu untuk tombol angka dan biru untuk operator, teks besar, sudut membulat, bayangan, serta efek hover yang membuat warna tombol sedikit berubah saat diarahkan kursor. Secara keseluruhan, kode ini membentuk baris tombol angka dan operator minus dalam tampilan kalkulator digital. --> 
+            <button data-value="4" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">4</button>
+            <button data-value="5" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">5</button>
+            <button data-value="6" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">6</button>
+            <button data-value="-" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">-</button>
+
+            <!--  Jelaskan Kodingan ini apa : Kode tersebut membuat baris tombol pada kalkulator yang terdiri dari angka 1, 2, 3, serta tombol operator tambah. Masing-masing tombol memiliki atribut data-value yang berfungsi menyimpan nilai yang akan digunakan oleh logika kalkulator ketika tombol ditekan. Tampilan tombol ditata menggunakan kelas Tailwind CSS, dengan warna abu-abu untuk tombol angka dan warna biru untuk tombol operator, teks besar dan tebal, sudut membulat, bayangan, serta efek hover yang membuat warna tombol berubah saat disentuh kursor. Secara keseluruhan, kode ini membentuk bagian input angka dan tombol penjumlahan pada antarmuka kalkulator digital. --> 
+            <button data-value="1" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">1</button>
+            <button data-value="2" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">2</button>
+            <button data-value="3" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">3</button>
+            <button data-value="+" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">+</button>
+
+            <!--  Jelaskan Kodingan ini apa : Kode tersebut membuat baris terakhir tombol kalkulator yang berisi tombol angka 0, tombol titik desimal, dan tombol sama dengan. Tombol “0” diberi kelas col-span-2, sehingga lebarnya menjadi dua kolom sekaligus agar terlihat lebih besar seperti pada kalkulator asli. Setiap tombol memiliki atribut data-value yang menyimpan nilai yang akan digunakan ketika tombol ditekan. Tampilan tombol menggunakan Tailwind CSS, dengan warna abu-abu untuk tombol angka dan titik, serta warna hijau untuk tombol “=”. Semua tombol dibuat dengan teks besar, sudut membulat, bayangan, dan efek hover yang membuat warna berubah saat diarahkan kursor. Secara keseluruhan, kode ini membentuk bagian input akhir kalkulator, yaitu angka 0, desimal, dan tombol untuk menghitung hasil.  --> 
+            <button data-value="0" class="btn-calc col-span-2 text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">0</button>
+            <button data-value="." class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">.</button>
+            <button data-value="=" class="btn-calc text-2xl font-bold bg-green-600 hover:bg-green-500 rounded-lg p-5 shadow-md text-white">=</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
